@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './secure.component.html',
   styleUrls: ['./secure.component.css']
 })
-export class AuthLoginComponent implements OnInit {
+export class SecureComponent implements OnInit {
 
   constructor() { }
 

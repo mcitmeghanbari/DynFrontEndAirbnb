@@ -1,19 +1,28 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
 
-//--- authentication
-import { AuthenticationComponent } from './authentication/authentication.component';
-import { AuthLoginComponent } from './authentication/auth-login/auth-login.component';
-import { AuthSignupComponent } from './authentication/auth-signup/auth-signup.component';
+import { SharedModule } from '../shared/shared.module';
+
+import { PublicComponent } from './public.component';
+
+import { AuthentictnComponent } from './authentictn/authentictn.component';
+import { AuthtLoginComponent } from './authentictn/autht-login/autht-login.component';
+import { AuthtSignupComponent } from './authentictn/autht-signup/autht-signup.component';
 //----------------------------------------------------------------------------------------
+
+const appRoutes: Routes = [
+  { path : '' , component : AuthtLoginComponent},
+  { path : 'register' , component : AuthtSignupComponent}
+];
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
-    AuthenticationComponent,
-    AuthLoginComponent,
-    AuthSignupComponent,
+    PublicComponent,
+    SharedModule,
+    AuthentictnComponent,
+    AuthtSignupComponent,
+    AuthtLoginComponent
   ]
 })
 export class PublicModule { }

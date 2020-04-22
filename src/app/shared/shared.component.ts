@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './shared.component.html',
   styleUrls: ['./shared.component.css']
 })
-export class AuthLoginComponent implements OnInit {
+export class SharedComponent implements OnInit {
 
   constructor() { }
 

@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
+
+
+import { SharedComponent } from './shared.component';
 
 //--- header
 import { HeaderComponent } from './header/header.component';
@@ -13,7 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
+    SharedComponent,
     HeaderComponent,
     HeaderNavbarComponent,
     FooterComponent

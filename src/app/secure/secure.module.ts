@@ -1,10 +1,22 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
+
+import { SharedModule } from '../shared/shared.module';
+
+import { SecureComponent } from './secure.component';
+
+
+// const appRoutes: Routes = [
+//   { path : '' , component : AuthtLoginComponent},
+//   { path : 'register' , component : AuthtSignclsupComponent}
+// ];
+
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    SecureComponent,
+    SharedModule
   ]
 })
 export class SecureModule { }
