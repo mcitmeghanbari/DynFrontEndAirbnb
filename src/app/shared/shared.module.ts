@@ -14,12 +14,13 @@ import { FooterComponent } from './footer/footer.component';
 //----------------------------------------------------------------------------------------
 
 @NgModule({
-  declarations: [],
-  imports: [
+  declarations: [
     SharedComponent,
     HeaderComponent,
     HeaderNavbarComponent,
     FooterComponent
+  ],
+  imports: [    
   ]
 })
 export class SharedModule { }

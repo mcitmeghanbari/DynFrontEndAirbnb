@@ -13,9 +13,10 @@ import { SecureComponent } from './secure.component';
 
 
 @NgModule({
-  declarations: [],
-  imports: [
-    SecureComponent,
+  declarations: [
+    SecureComponent
+  ],
+  imports: [    
     SharedModule
   ]
 })

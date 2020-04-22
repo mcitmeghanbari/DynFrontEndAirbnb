@@ -16,13 +16,14 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
-  imports: [
+  declarations: [
     PublicComponent,
-    SharedModule,
     AuthentictnComponent,
     AuthtSignupComponent,
     AuthtLoginComponent
+  ],
+  imports: [    
+    SharedModule
   ]
 })
 export class PublicModule { }
