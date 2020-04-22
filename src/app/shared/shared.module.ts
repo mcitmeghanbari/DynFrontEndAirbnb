@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+//--------------------------
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-
-
+//--------------------------
 import { SharedComponent } from './shared.component';
-
-//--- header
-import { HeaderComponent } from './header/header.component';
-import { HeaderNavbarComponent } from './header/header-navbar/header-navbar.component';
 //----------------------------------------------------------------------------------------
 
-//--- footer
+//----------------------------------------------------------------------------------------
+import { HeaderComponent } from './header/header.component';
+import { HeaderNavbarComponent } from './header/header-navbar/header-navbar.component';
+//--------------------------
 import { FooterComponent } from './footer/footer.component';
 //----------------------------------------------------------------------------------------
 
@@ -20,7 +22,10 @@ import { FooterComponent } from './footer/footer.component';
     HeaderNavbarComponent,
     FooterComponent
   ],
-  imports: [    
+  imports: [
+    CommonModule,
+    BrowserModule,    
+    FormsModule
   ]
 })
 export class SharedModule { }

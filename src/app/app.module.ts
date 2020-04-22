@@ -1,10 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+//--------------------------
 import { FormsModule } from '@angular/forms';
-
+import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
+//----------------------------------------------------------------------------------------
 
+//----------------------------------------------------------------------------------------
 import { AppComponent } from './app.component';
+//----------------------------------------------------------------------------------------
 
 const appRoutes: Routes = [
   { path : '' , loadChildren : () => import('./public/public.module').then((m) => m.PublicModule)  },
@@ -16,9 +20,10 @@ const appRoutes: Routes = [
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    CommonModule,
+    BrowserModule,    
     FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
