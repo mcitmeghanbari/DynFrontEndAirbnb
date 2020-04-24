@@ -10,7 +10,7 @@ export class StyBkListItemComponent implements OnInit {
 
   constructor() { }
 
-  @Input() item: {id: number, title: string, room: string, beds: number, points:number };
+  @Input() item: {id: number, title: string, room: string, beds: number, points: number };
 
   ngOnInit(): void {
   }

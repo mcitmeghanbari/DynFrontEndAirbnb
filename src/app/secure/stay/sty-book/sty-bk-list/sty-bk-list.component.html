@@ -1,20 +1,19 @@
-<div class="row my-4">
+
+<div class="row  my-4">
+    <div class="col-auto">
+        <img src="assets/imgs/icon-uc-alarm.e0a2b02f.gif" width="32" height="32" class="mx-auto d-block" />
+    </div>
     <div class="col">
-
-        <div class="row">
-            <div class="col-auto">
-                <img src="assets/imgs/icon-uc-alarm.e0a2b02f.gif" width="32" height="32" class="mx-auto d-block"/>
-            </div>
-            <div class="col">
-                <b>Check travel restrictions before booking.The health and safety of our communities come first.</b> Please follow government guidelines and travel only if it's essential.
-            </div>
-        </div>
-
-        <div class="row my-4">        
-            <div *ngFor="let item of listItems" class="col mb-2">
-                <app-sty-bk-list-item [item]="item"></app-sty-bk-list-item>
-            </div>
-        </div>
-
+        <b>Check travel restrictions before booking.The health and safety of our communities come first.</b>
+        Please follow government guidelines and travel only if it's essential.
     </div>
 </div>
+
+<div class="row my-4">
+    <div *ngFor="let item of listItems" class="col mb-2">
+        <a  [routerLink]="['/sec/details', item.id]" style="color: inherit; text-decoration: inherit;">
+            <app-sty-bk-list-item [item]="item"></app-sty-bk-list-item>
+        </a>
+    </div>
+</div>
+

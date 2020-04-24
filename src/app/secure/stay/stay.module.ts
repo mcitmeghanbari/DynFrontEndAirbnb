@@ -19,13 +19,13 @@ import { StyBkDtReserveComponent } from './sty-book/sty-bk-detail/sty-bk-dt-rese
 //----------------------------------------------------------------------------------------
 
 const appRoutes: Routes = [
-  { path : '' , component : StayComponent, children : [
-      { path : '' , component : StyBookComponent, children : [
-          { path : '' , component : StyBkListComponent},
-          { path : 'li/:t/:p/:d/:q' , component : StyBkListItemComponent}
-      ]},
-      { path : 'trips' , component : StyTripsComponent}
-]}
+  {
+    path: '', component: StayComponent, children: [
+      { path: '', component: StyBookComponent },
+      { path: 'details/id/:i', component: StyBkDetailComponent },
+      { path: 'trips', component: StyTripsComponent }
+    ]
+  }
 ];
 
 @NgModule({
