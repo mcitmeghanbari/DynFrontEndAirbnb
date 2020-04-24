@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //--------------------------
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 //----------------------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------------------
+import { StayComponent } from './stay.component';
 import { StyBookComponent } from './sty-book/sty-book.component';
 import { StyTripsComponent } from './sty-trips/sty-trips.component';
 //--------------------------
@@ -19,8 +18,19 @@ import { StyBkDtHostComponent } from './sty-book/sty-bk-detail/sty-bk-dt-host/st
 import { StyBkDtReserveComponent } from './sty-book/sty-bk-detail/sty-bk-dt-reserve/sty-bk-dt-reserve.component';
 //----------------------------------------------------------------------------------------
 
+const appRoutes: Routes = [
+  { path : '' , component : StayComponent, children : [
+      { path : '' , component : StyBookComponent, children : [
+          { path : '' , component : StyBkListComponent},
+          { path : 'li/:t/:p/:d/:q' , component : StyBkListItemComponent}
+      ]},
+      { path : 'trips' , component : StyTripsComponent}
+]}
+];
+
 @NgModule({
   declarations: [
+    StayComponent,
     StyBookComponent,
     StyTripsComponent,
     StyBkSearchComponent,
@@ -33,9 +43,7 @@ import { StyBkDtReserveComponent } from './sty-book/sty-bk-detail/sty-bk-dt-rese
   ],
   imports: [
     CommonModule,
-    BrowserModule,    
-    FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forChild(appRoutes)
   ]
 })
 export class StayModule { }

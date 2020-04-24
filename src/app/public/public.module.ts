@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //--------------------------
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 //--------------------------
 import { SharedModule } from '../shared/shared.module';
@@ -18,7 +16,7 @@ import { AuthtSignupComponent } from './authentictn/autht-signup/autht-signup.co
 
 const appRoutes: Routes = [
   { path : '' , component : AuthtLoginComponent},
-  { path : 'register' , component : AuthtSignupComponent}
+  { path : 'signup' , component : AuthtSignupComponent}
 ];
 
 @NgModule({
@@ -29,11 +27,9 @@ const appRoutes: Routes = [
     AuthtLoginComponent
   ],
   imports: [
-    CommonModule,
-    BrowserModule,    
-    FormsModule,
-    RouterModule.forRoot(appRoutes),
-    SharedModule
+    CommonModule,    
+    SharedModule,
+    RouterModule.forChild(appRoutes)
   ]
 })
 export class PublicModule { }

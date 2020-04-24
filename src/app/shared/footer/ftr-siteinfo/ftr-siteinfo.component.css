@@ -1,0 +1,14 @@
+ul {
+    list-style: none;
+}
+
+li {
+    float: left;
+    margin-right: 24px;
+}
+
+.dotsep{
+    display: inline-block;
+    text-align: center;
+    width: 19px;
+}

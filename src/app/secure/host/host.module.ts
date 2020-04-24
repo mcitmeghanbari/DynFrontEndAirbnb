@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //--------------------------
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 //----------------------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------------------
+import { HostComponent } from './host.component';
+
 import { HstBecomeComponent } from './hst-become/hst-become.component';
 import { HstListingsComponent } from './hst-listings/hst-listings.component';
 //--------------------------
@@ -21,6 +21,7 @@ import { HstBcCalendarComponent } from './hst-become/hst-bc-calendar/hst-bc-cale
 
 @NgModule({
   declarations: [
+    HostComponent,
     HstBecomeComponent,
     HstListingsComponent,
     HstBcRoomComponent,
@@ -33,9 +34,6 @@ import { HstBcCalendarComponent } from './hst-become/hst-bc-calendar/hst-bc-cale
   ],
   imports: [
     CommonModule,
-    BrowserModule,    
-    FormsModule,
-    RouterModule.forRoot(appRoutes)
   ]
 })
 export class HostModule { }

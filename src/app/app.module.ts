@@ -7,8 +7,12 @@ import { Routes, RouterModule } from '@angular/router';
 //----------------------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------------------
-import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
 //----------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------
+import { AppComponent } from './app.component';
+//------------------------------------./shared/footer/ftr-navlinks/ftr-navlinks.component---------------
 
 const appRoutes: Routes = [
   { path : '' , loadChildren : () => import('./public/public.module').then((m) => m.PublicModule)  },
@@ -17,18 +21,20 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent    
+    
   ],
   imports: [
     CommonModule,
-    BrowserModule,    
+    BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    SharedModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 
-export class AppModule { 
+export class AppModule {
 
 }

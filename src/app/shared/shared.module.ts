@@ -1,31 +1,37 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //--------------------------
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
+
 //--------------------------
 import { SharedComponent } from './shared.component';
 //----------------------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------------------
 import { HeaderComponent } from './header/header.component';
-import { HeaderNavbarComponent } from './header/header-navbar/header-navbar.component';
+import { HdrNavbarComponent } from './header/hdr-navbar/hdr-navbar.component';
 //--------------------------
 import { FooterComponent } from './footer/footer.component';
+import { FtrNavlinksComponent } from './footer/ftr-navlinks/ftr-navlinks.component';
+import { FtrSiteinfoComponent } from './footer/ftr-siteinfo/ftr-siteinfo.component';
 //----------------------------------------------------------------------------------------
+
 
 @NgModule({
   declarations: [
     SharedComponent,
     HeaderComponent,
-    HeaderNavbarComponent,
-    FooterComponent
+    HdrNavbarComponent,
+    FooterComponent,
+    FtrNavlinksComponent,
+    FtrSiteinfoComponent
   ],
   imports: [
     CommonModule,
-    BrowserModule,    
-    FormsModule
-  ]
+  ],
+  exports: [
+    SharedComponent,
+    HeaderComponent,
+    FooterComponent
+  ],
 })
 export class SharedModule { }

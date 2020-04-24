@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //--------------------------
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 //--------------------------
 import { SharedModule } from '../shared/shared.module';
@@ -12,22 +10,20 @@ import { SharedModule } from '../shared/shared.module';
 import { SecureComponent } from './secure.component';
 //----------------------------------------------------------------------------------------
 
+
 const appRoutes: Routes = [
-  { path : '' , component : SecureComponent},
-  { path : 'register' , component : SecureComponent}
-];
+  { path : '' , loadChildren : () => import('../secure/stay/stay.module').then((m) => m.StayModule)  },
+  { path : 'host' , loadChildren : () => import('../secure/host/host.module').then((m) => m.HostModule)  }
+ ];
 
 
 @NgModule({
   declarations: [
-    SecureComponent
+    SecureComponent,
   ],
   imports: [
     CommonModule,
-    BrowserModule,    
-    FormsModule,
-    RouterModule.forRoot(appRoutes),
-    SharedModule
+    RouterModule.forChild(appRoutes)                                              
   ]
 })
 export class SecureModule { }
