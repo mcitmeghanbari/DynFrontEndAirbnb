@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-sty-bk-dt-ov-summary',
   templateUrl: './sty-bk-dt-ov-summary.component.html',

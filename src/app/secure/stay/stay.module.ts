@@ -15,7 +15,6 @@ import { StyBkListItemComponent } from './sty-book/sty-bk-list-item/sty-bk-list-
 import { StyBkDetailComponent } from './sty-book/sty-bk-detail/sty-bk-detail.component';
 
 import { StyBkDtOverviewComponent } from './sty-book/sty-bk-detail/sty-bk-dt-overview/sty-bk-dt-overview.component';
-import { StyBkDtHostComponent } from './sty-book/sty-bk-detail/sty-bk-dt-host/sty-bk-dt-host.component';
 import { StyBkDtReserveComponent } from './sty-book/sty-bk-detail/sty-bk-dt-reserve/sty-bk-dt-reserve.component';
 import { StyBkDtPhotosComponent } from './sty-book/sty-bk-detail/sty-bk-dt-photos/sty-bk-dt-photos.component';
 
@@ -45,7 +44,6 @@ const appRoutes: Routes = [
     StyBkDetailComponent,
     StyBkDtOverviewComponent,
     StyBkDtOvSummaryComponent,
-    StyBkDtHostComponent,
     StyBkDtReserveComponent,    
     StyBkDtPhotosComponent
   ],

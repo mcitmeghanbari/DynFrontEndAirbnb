@@ -1,9 +1,43 @@
-<p>sty-bk-dt-overview works!</p>
-
 <div class="row">
+    <div class="col-10">
+        <h2><b>Amazing View of Downtown Montreal</b></h2>
+        <p>Montréal</p>
+    </div>
+    <div class="col-2">
+        <img src="assets/imgs/user/1.jpg" width="128" height="128" class="img-fluid rounded-circle">
+        <p>Megane</p>
+    </div>
+</div>
+
+<div class="row border-bottom my-2 py-2">
+    <div class="col-auto">
+        2 guests
+    </div>
+    <div class="col-auto">
+        Studio
+    </div>
+    <div class="col-auto">
+        1 bed
+    </div>
+    <div class="col-auto">
+        1 bath
+    </div>
+</div>
+
+<div class="row border-bottom my-2 py-2">
     <div class="col">
         <div *ngFor="let itemSummary of listSummary" class="col mb-2">
-                <app-sty-bk-dt-ov-summary [item]="itemSummary"></app-sty-bk-dt-ov-summary>
+            <app-sty-bk-dt-ov-summary [item]="itemSummary"></app-sty-bk-dt-ov-summary>
         </div>
+    </div>
+</div>
+
+<div class="row my-3 py-3">
+    <div class="col">
+        Incredible listing, at an amazing location , tastefully decorated in the heart of downtown, walking distance to
+        Place des Arts and St-Laurent Boulevard with all kind of restaurants, bars, coffee shops and night clubs.
+
+        5 mins walking distance to Saint Laurent metro station right after Berri Uqam, green line (closest location from
+        the apartment)
     </div>
 </div>

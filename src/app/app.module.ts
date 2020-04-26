@@ -19,22 +19,23 @@ import { TestComponent } from './test/test.component';
 
 
 const appRoutes: Routes = [
-  { path : '' , loadChildren : () => import('./public/public.module').then((m) => m.PublicModule)  },
-  { path : 'sec' , loadChildren : () => import('./secure/secure.module').then((m) => m.SecureModule)  }
- ];
+  { path: '', loadChildren: () => import('./public/public.module').then((m) => m.PublicModule) },
+  { path: 'sec', loadChildren: () => import('./secure/secure.module').then((m) => m.SecureModule) }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent       
-    
+    TestComponent
+
   ],
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    SharedModule 
+    SharedModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
