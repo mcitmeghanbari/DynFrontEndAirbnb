@@ -21,8 +21,10 @@ import { StyBkDtReserveComponent } from './sty-book/sty-bk-detail/sty-bk-dt-rese
 const appRoutes: Routes = [
   {
     path: '', component: StayComponent, children: [
-      { path: '', component: StyBookComponent },
-      { path: 'details/id/:i', component: StyBkDetailComponent },
+      { path: '', component: StyBookComponent , children: [
+        { path: '', component: StyBkListComponent },
+        { path: 'details/:i', component: StyBkDetailComponent }
+      ]},
       { path: 'trips', component: StyTripsComponent }
     ]
   }

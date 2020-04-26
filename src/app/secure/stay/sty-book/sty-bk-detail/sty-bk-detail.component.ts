@@ -16,10 +16,10 @@ export class StyBkDetailComponent implements OnInit {
   ngOnInit(): void {
 
     this.item.id = this.route.snapshot.params['i'];
-    this.item.title = this.route.snapshot.params['t'];
-    this.item.room = this.route.snapshot.params['r'];
-    this.item.beds = this.route.snapshot.params['b'];
-    this.item.points = this.route.snapshot.params['p'];
+    // this.item.title = this.route.snapshot.params['t'];
+    // this.item.room = this.route.snapshot.params['r'];
+    // this.item.beds = this.route.snapshot.params['b'];
+    // this.item.points = this.route.snapshot.params['p'];
 
   }
 

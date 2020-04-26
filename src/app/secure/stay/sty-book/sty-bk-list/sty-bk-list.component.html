@@ -1,19 +1,60 @@
-
-<div class="row  my-4">
-    <div class="col-auto">
-        <img src="assets/imgs/icon-uc-alarm.e0a2b02f.gif" width="32" height="32" class="mx-auto d-block" />
-    </div>
+<div class="row mx-4">
     <div class="col">
-        <b>Check travel restrictions before booking.The health and safety of our communities come first.</b>
-        Please follow government guidelines and travel only if it's essential.
-    </div>
-</div>
 
-<div class="row my-4">
-    <div *ngFor="let item of listItems" class="col mb-2">
-        <a  [routerLink]="['/sec/details', item.id]" style="color: inherit; text-decoration: inherit;">
-            <app-sty-bk-list-item [item]="item"></app-sty-bk-list-item>
-        </a>
+        <div class="row">
+            <div class="col">
+                <app-sty-bk-search></app-sty-bk-search>
+            </div>
+        </div>
+
+        <div class="row mt-4 border-bottom">
+            <div class="col-12">
+                300+ stays
+            </div>
+            <div class="col-12  mb-2">
+                <h2>Stays in Montreal</h2>
+            </div>
+            <div class="col-12 my-2">
+                <button type="button" class="btn btn-outline-secondary  rounded-pill mr-1">
+                    Cancellation flexibility
+                </button>
+                <button type="button" class="btn btn-outline-secondary  rounded-pill mr-1">
+                    Type of place
+                </button>
+                <button type="button" class="btn btn-outline-secondary  rounded-pill mr-1">
+                    Price
+                </button>
+                <button type="button" class="btn btn-outline-secondary  rounded-pill mr-1">
+                    More filters
+                </button>
+            </div>
+            <div class="col-12  my-2">
+                Enter dates and number of guests to see the total price per night. Tourism taxes may be added.
+            </div>
+        </div>        
+
+        <div class="row">
+            <div class="col">
+                <div class="row  my-4">
+                    <div class="col-auto">
+                        <img src="assets/imgs/icon-uc-alarm.e0a2b02f.gif" width="32" height="32" class="mx-auto d-block" />
+                    </div>
+                    <div class="col">
+                        <b>Check travel restrictions before booking.The health and safety of our communities come first.</b>
+                        Please follow government guidelines and travel only if it's essential.
+                    </div>
+                </div>
+        
+                <div class="row my-4">
+                    <div *ngFor="let item of listItems" class="col mb-2">
+                        <a [routerLink]="['/sec/details', item.id]" style="color: inherit; text-decoration: inherit;">
+                            <app-sty-bk-list-item [item]="item"></app-sty-bk-list-item>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
