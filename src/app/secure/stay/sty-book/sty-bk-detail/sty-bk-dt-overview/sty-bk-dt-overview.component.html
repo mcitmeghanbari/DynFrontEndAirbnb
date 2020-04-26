@@ -1,2 +1,9 @@
 <p>sty-bk-dt-overview works!</p>
 
+<div class="row">
+    <div class="col">
+        <div *ngFor="let itemSummary of listSummary" class="col mb-2">
+                <app-sty-bk-dt-ov-summary [item]="itemSummary"></app-sty-bk-dt-ov-summary>
+        </div>
+    </div>
+</div>

@@ -18,6 +18,8 @@ export class StyBkListComponent implements OnInit {
     {id: 6, title: 'The light of Montreal (1 Free parking)', room: 'Entire apartment', beds: 1, points: 5.0 },
     {id: 7, title: 'North Pearl in Downtown Montreal', room: 'Entire loft', beds: 4, points: 3.5 },
     {id: 8, title: 'Skylit Loft in Old Montreal', room: 'Entire apartment', beds: 1, points: 2.5 }];
+
+    
   ngOnInit(): void {
   }
 

@@ -1,25 +1,15 @@
-<p>sty-bk-detail works!</p>
-
-
-<div class="row">
+<div class="row no-gutters">
     <div class="col">
-        <img src="assets/imgs/stay/{{ item.id }}.png" class="img-fluid" alt="Responsive image">
+        <app-sty-bk-dt-photos [id]="item.id"></app-sty-bk-dt-photos>
     </div>
-    <div class="col">
-        <div class="row">
-            <div class="col-6">
-                
-            </div>
-            <div class="col-6">
-
-            </div>
-            <div class="col-6">
-
-            </div>
-            <div class="col-6">
-
-            </div>
-        </div>
-    </div>
-
 </div>
+
+<div class="row" style="padding: 20px 5%;">
+    <div class="col sticky-top">
+        <app-sty-bk-dt-overview></app-sty-bk-dt-overview>
+    </div>
+    <div class="col">
+        <app-sty-bk-dt-reserve></app-sty-bk-dt-reserve>
+    </div>
+</div>
+
