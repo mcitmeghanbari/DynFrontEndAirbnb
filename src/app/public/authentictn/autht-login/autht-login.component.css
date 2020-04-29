@@ -5,5 +5,11 @@
 
 button{
     height: 48px;
+    
 }
 
+.invalidFormControl{
+    border : 1px solid red;
+    background-color: var(--danger);
+    ;opacity:0.1;
+}

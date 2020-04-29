@@ -1,6 +1,6 @@
 <div class="row justify-content-center" style="height: 100%;">
     <div class="col-12 col-md-3 border">
-        <form>
+        <form [formGroup]="formLogin" (ngSubmit)="submitLogin()">
 
             <div class="form-group text-center my-4">
                 <h5><b>Log in</b></h5>
@@ -8,14 +8,18 @@
 
             <div class="form-group my-4">
                 <div class="border border-secondary rounded ">
-                    <input type="email" class="form-control border-bottom border-secondary" id="inputEmail"
-                        placeholder="Email">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    <input type="email" formControlName="email" class="form-control border-bottom border-secondary" id="inputEmail"  placeholder="Email"
+                        [ngClass]="{invalidFormControl : validateForm(this.formLogin.controls.email) }" >
+                    <input type="password" formControlName="password" class="form-control" id="inputPassword" placeholder="Password"
+                        [ngClass]="{invalidFormControl : validateForm(this.formLogin.controls.password) }">
                 </div>
+                <small class="form-text text-danger px-2" *ngIf="validateForm(this.formLogin.controls.email, 'required')"> <i class="fas fa-exclamation-circle"></i> Email is required</small>
+                <small class="form-text text-danger px-2"  *ngIf="validateForm(this.formLogin.controls.email, 'email')"> <i class="fas fa-exclamation-circle"></i> Email must follow a valid format</small>
+                <small class="form-text text-danger px-2" *ngIf="validateForm(this.formLogin.controls.password, 'required')"> <i class="fas fa-exclamation-circle"></i> Password is required</small>
             </div>
 
             <div class="form-group my-4">
-                <button type="button" routerLink='/sec' class="btn btn-block btn-danger"><b>Continue</b></button>
+                <button type="submit" class="btn btn-block btn-danger"><b>Continue</b></button>
             </div>
 
             <div class="form-group">
