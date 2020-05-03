@@ -10,6 +10,9 @@ import { SharedModule } from '../shared/shared.module';
 import { SecureComponent } from './secure.component';
 //----------------------------------------------------------------------------------------
 
+//----------------------------------------------------------------------------------------
+import { DatabaseService } from './services/database.service';
+//----------------------------------------------------------------------------------------
 
 const appRoutes: Routes = [
   { path : '' , loadChildren : () => import('../secure/stay/stay.module').then((m) => m.StayModule)  },
@@ -24,6 +27,9 @@ const appRoutes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(appRoutes)                                              
-  ]
+  ],
+  providers: [
+    DatabaseService
+  ],
 })
 export class SecureModule { }

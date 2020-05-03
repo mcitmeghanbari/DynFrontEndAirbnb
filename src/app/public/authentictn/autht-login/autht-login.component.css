@@ -9,7 +9,8 @@ button{
 }
 
 .invalidFormControl{
-    border : 1px solid red;
+    color: var(--danger);
+    border : 1px solid var(--danger);
     background-color: var(--danger);
-    ;opacity:0.1;
+    opacity:0.1;
 }

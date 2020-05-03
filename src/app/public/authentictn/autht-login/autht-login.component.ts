@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-autht-login',
@@ -8,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AuthtLoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService : AuthenticationService) { }
 
   formLogin: FormGroup;
   validationMsg = '';
@@ -23,8 +24,8 @@ export class AuthtLoginComponent implements OnInit {
   validateForm(ctrl, type?) {
     let result = false;
 
-    if (type == null) {
-      result = (ctrl.errors && ctrl.errors.required && ctrl.touched);
+    if (type == "") {
+      result = (ctrl.errors && ctrl.touched);
     }
 
     if (type == "required") {
@@ -44,6 +45,6 @@ export class AuthtLoginComponent implements OnInit {
 
 
   submitLogin() {
-    alert('login!!');
+    //authService.login(this.formLogin.value.email, this.formLogin.value.password)
   }
 }
