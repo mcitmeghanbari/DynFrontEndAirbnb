@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //--------------------------
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //--------------------------
 import { SharedModule } from '../shared/shared.module';
 //----------------------------------------------------------------------------------------
@@ -10,9 +11,6 @@ import { SharedModule } from '../shared/shared.module';
 import { SecureComponent } from './secure.component';
 //----------------------------------------------------------------------------------------
 
-//----------------------------------------------------------------------------------------
-import { DatabaseService } from './services/database.service';
-//----------------------------------------------------------------------------------------
 
 const appRoutes: Routes = [
   { path : '' , loadChildren : () => import('../secure/stay/stay.module').then((m) => m.StayModule)  },
@@ -26,10 +24,11 @@ const appRoutes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(appRoutes)                                              
+    RouterModule.forChild(appRoutes),
+    FormsModule, 
+    ReactiveFormsModule                                           
   ],
-  providers: [
-    DatabaseService
+  providers: [    
   ],
 })
 export class SecureModule { }

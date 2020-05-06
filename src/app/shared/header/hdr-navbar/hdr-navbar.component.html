@@ -30,30 +30,34 @@
 
             <div class="navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="#">Reservations</a>
-                    <a class="nav-item nav-link" href="#">Listings</a>
-                    <a class="nav-item nav-link" href="#">Inbox <span class="badge badge-warning">1</span></a>
+                    <a class="nav-item nav-link"  (click)="gotoLink('/sec/host/listings')">Listings <span class="badge badge-warning">1</span></a>
+                    <a class="nav-item nav-link"  (click)="gotoLink('/sec/trips')">Reservations <span class="badge badge-warning">1</span></a>
                 </div>
             </div>
 
-            <a class="btn btn-outline-light rounded-pill mr-1 headernavbar_btn" routerLink='/sec' href="#" >
+            <a class="btn btn-outline-light rounded-pill mr-1 headernavbar_btn" (click)="gotoLink('/sec/host')">
                 Host your home
             </a>
 
-            <div class="btn btn-outline-light rounded-pill mr-1 headernavbar_btn">
-                Host an experience
+            <div class="btn btn-outline-light rounded-pill mr-1 headernavbar_btn" (click)="gotoLink('/sec')">
+                Stay    
             </div>
-            
-            <div class="btn btn-outline-light rounded-pill mr-1 headernavbar_btn">
-                Login
+
+            <div class="btn btn-outline-light rounded-pill mr-1 headernavbar_btn" *ngIf="authenticationService.isValid" (click)="logout()">
+                Logout
+            </div>
+
+            <div class="btn btn-outline-light rounded-pill mr-1 headernavbar_btn" *ngIf="!authenticationService.isValid" (click)="gotoLink('/signup')">
+                Signup
             </div>
 
             <span class="mr-1 connected-user"></span>
-            <div class="btn-group dropleft shadow-sm rounded-pill" style="height: 42px;">
-                <button type="button" class="btn btn-sm " data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
+            <div class="btn-group dropleft shadow-sm rounded-pill dropdown" style="height: 42px; width:100px;">
+                <button type="button" class="btn btn-sm " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
                     <div class="row">
-                        <div class="col-6">user</div>
+                        <div *ngIf="!authenticationService.isValid" (click)="gotoLink('/')" class="col-6">Login</div>
+                        <div *ngIf="authenticationService.isValid" class="col-6">{{ authenticationService.user.fname }}</div>
                         <div class="col-6">
                             <img src="assets/imgs/user.png" width="32" height="32" class="img-thumbnail"
                                 style="border-radius: 50%">
@@ -69,7 +73,7 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Account</a>
                     <a class="dropdown-item" href="#">Help</a>
-                    <a class="dropdown-item" href="#">Logout</a>
+                    <a class="dropdown-item" (click)="logout()">Logout</a>
                 </div>
             </div>
         </nav>

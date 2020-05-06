@@ -15,10 +15,6 @@ import { AuthtLoginComponent } from './authentictn/autht-login/autht-login.compo
 import { AuthtSignupComponent } from './authentictn/autht-signup/autht-signup.component';
 //----------------------------------------------------------------------------------------
 
-//----------------------------------------------------------------------------------------
-import { AuthenticationService } from './services/authentication.service';
-//----------------------------------------------------------------------------------------
-
 const appRoutes: Routes = [
   { path : '' , component : AuthtLoginComponent},
   { path : 'signup' , component : AuthtSignupComponent}
@@ -29,7 +25,7 @@ const appRoutes: Routes = [
     PublicComponent,
     AuthentictnComponent,
     AuthtSignupComponent,
-    AuthtLoginComponent
+    AuthtLoginComponent    
   ],
   imports: [
     CommonModule,    
@@ -37,9 +33,6 @@ const appRoutes: Routes = [
     RouterModule.forChild(appRoutes),
     FormsModule, 
     ReactiveFormsModule
-  ],
-  providers: [
-    AuthenticationService
-  ],
+  ]  
 })
 export class PublicModule { }

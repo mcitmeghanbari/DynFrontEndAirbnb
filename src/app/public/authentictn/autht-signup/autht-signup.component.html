@@ -17,6 +17,7 @@
                 <small class="form-text text-danger px-2" *ngIf="validateForm(this.formSignup.controls.email, 'required')"> <i class="fas fa-exclamation-circle"></i> Email is required</small>
                 <small class="form-text text-danger px-2"  *ngIf="validateForm(this.formSignup.controls.email, 'email')"> <i class="fas fa-exclamation-circle"></i> Email must follow a valid format</small>
                 <small class="form-text text-danger px-2" *ngIf="validateForm(this.formSignup.controls.password, 'required')"> <i class="fas fa-exclamation-circle"></i> Password is required</small>
+                <small class="form-text text-danger px-2" *ngIf="message"> <i class="fas fa-exclamation-circle"></i> {{  message }}</small>
             </div>
 
             <div class="form-group my-4">

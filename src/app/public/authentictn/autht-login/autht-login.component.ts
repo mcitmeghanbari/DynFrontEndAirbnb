@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
@@ -9,15 +11,15 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class AuthtLoginComponent implements OnInit {
 
-  constructor(private authService : AuthenticationService) { }
+  constructor(public authService: AuthenticationService, private router: Router) { }
 
   formLogin: FormGroup;
-  validationMsg = '';
+  message = '';
 
   ngOnInit() {
     this.formLogin = new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email]),
-      'password': new FormControl(null, [Validators.required, Validators.minLength(8)])
+      'password': new FormControl(null, [Validators.required, Validators.minLength(3)])
     });
   }
 
@@ -36,15 +38,22 @@ export class AuthtLoginComponent implements OnInit {
       result = (ctrl.errors && ctrl.errors.email);
     }
 
-    // if (type == "password") {
-    //   result = (ctrl.errors && ctrl.errors.email);
-    // }
+    if (type == "minLength") {
+      console.log(ctrl.errors);
+      result = (ctrl.errors && ctrl.errors.minlength);
+    }
 
     return result;
   }
 
 
   submitLogin() {
-    //authService.login(this.formLogin.value.email, this.formLogin.value.password)
+    this.authService.login(this.formLogin.value.email, this.formLogin.value.password);
+    this.message = this.authService.message;
+    if (this.authService.isValid) {
+      this.router.navigate(['/sec']);
+    }
+    // this.authService.message;
+    // this.authService.isValid;
   }
 }

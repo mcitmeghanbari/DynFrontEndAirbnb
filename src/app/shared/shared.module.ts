@@ -15,6 +15,9 @@ import { FtrNavlinksComponent } from './footer/ftr-navlinks/ftr-navlinks.compone
 import { FtrSiteinfoComponent } from './footer/ftr-siteinfo/ftr-siteinfo.component';
 //----------------------------------------------------------------------------------------
 
+//----------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------
 
 @NgModule({
   declarations: [
@@ -26,12 +29,15 @@ import { FtrSiteinfoComponent } from './footer/ftr-siteinfo/ftr-siteinfo.compone
     FtrSiteinfoComponent
   ],
   imports: [
-    CommonModule,
+    CommonModule
   ],
   exports: [
     SharedComponent,
     HeaderComponent,
     FooterComponent
   ],
+  providers: [
+    
+  ]
 })
 export class SharedModule { }

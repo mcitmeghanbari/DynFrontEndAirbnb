@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //--------------------------
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //----------------------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------------------
@@ -20,6 +21,12 @@ import { StyBkDtPhotosComponent } from './sty-book/sty-bk-detail/sty-bk-dt-photo
 
 import { StyBkDtOvSummaryComponent } from './sty-book/sty-bk-detail/sty-bk-dt-overview/sty-bk-dt-ov-summary/sty-bk-dt-ov-summary.component';
 //----------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------
+import { DatabaseService } from '../services/database.service';
+
+//----------------------------------------------------------------------------------------
+
 
 const appRoutes: Routes = [
   {
@@ -49,7 +56,12 @@ const appRoutes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(appRoutes)
-  ]
+    RouterModule.forChild(appRoutes),
+    FormsModule, 
+    ReactiveFormsModule
+  ],
+  providers: [
+    DatabaseService
+  ],
 })
 export class StayModule { }
