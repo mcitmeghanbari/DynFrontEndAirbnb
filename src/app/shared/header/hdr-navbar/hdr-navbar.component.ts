@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/public/services/authentication.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HdrNavbarComponent implements OnInit {
 
-  constructor(private router: Router, public authenticationService: AuthenticationService) { }
+  constructor(private route: ActivatedRoute, private router: Router, public authenticationService: AuthenticationService) { }
 
   imageUser = "assets/imgs/user.png";
 
@@ -18,9 +18,17 @@ export class HdrNavbarComponent implements OnInit {
     //this.imageUser = "assets/imgs/user/" + this.authenticationService.user.id + ".jpg";
   }
 
+  // setHomeLink() {
+  //   if (this.authenticationService.isValid())
+  //     this.gotoLink('/sec');
+  //   else
+  //     this.gotoLink('/');
+  // }
+
   logout() {
     this.authenticationService.logout();
     this.imageUser = "assets/imgs/user.png";
+    this.gotoLink("/");
   }
 
   gotoLink(link) {

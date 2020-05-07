@@ -12,7 +12,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class StyBkDetailComponent implements OnInit {
 
-
   constructor(private route: ActivatedRoute, private router: Router, public databaseService: DatabaseService, private authenticationService: AuthenticationService) { }
 
   item;
@@ -25,5 +24,4 @@ export class StyBkDetailComponent implements OnInit {
   gotoLink(link) {
     this.router.navigate([link]);
   }
-
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
 //--------------------------
 
 //--------------------------
@@ -29,7 +30,8 @@ import { FtrSiteinfoComponent } from './footer/ftr-siteinfo/ftr-siteinfo.compone
     FtrSiteinfoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     SharedComponent,

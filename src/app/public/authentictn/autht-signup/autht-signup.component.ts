@@ -49,16 +49,12 @@ export class AuthtSignupComponent implements OnInit {
   }
 
   submitSignup() {
-    console.log('1:' + this.authService.isValid);
     this.authService.signup(this.formSignup.value.email, this.formSignup.value.password,
       this.formSignup.value.fname, this.formSignup.value.lname);
     this.message = this.authService.message;
-    console.log('2:' + this.authService.isValid);
-    if (this.authService.isValid) {
+    if (this.authService.isValid()) {
       this.router.navigate(['/sec']);
     }
-    // this.authService.message;
-    // this.authService.isValid;
   }
 
 }

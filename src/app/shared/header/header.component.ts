@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
-    if (!this.authenticationService.isValid) {
+    if (!this.authenticationService.isValid()) {
       this.gotoLink('/');
     }
   }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/public/services/authentication.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-sty-book',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StyBookComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private router: Router, public authenticationService: AuthenticationService) { }
+
 
   ngOnInit(): void {
+    if (!this.authenticationService.isValid())
+      this.gotoLink("/");
   }
 
+  gotoLink(link) {
+    this.router.navigate([link]);
+  }
 }

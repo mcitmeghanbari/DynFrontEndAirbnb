@@ -47,9 +47,9 @@
         
                 <div class="row my-4">
                     <div *ngFor="let item of items" class="col mb-2">
-                        <a [routerLink]="['/sec/details', item.id]" style="color: inherit; text-decoration: inherit;">
+                        <div style="color: inherit; text-decoration: inherit;">
                             <app-sty-bk-list-item [item]="item"></app-sty-bk-list-item>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -21,6 +21,20 @@ export class AuthtLoginComponent implements OnInit {
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'password': new FormControl(null, [Validators.required, Validators.minLength(3)])
     });
+
+    console.log('aaaaaaaaaaaaaa' + this.authService.isValid());
+
+    if (this.authService.isValid()) {
+      this.gotoLink("/sec");
+    }
+  }
+
+  submitLogin() {
+    this.authService.login(this.formLogin.value.email, this.formLogin.value.password);
+    this.message = this.authService.message;
+    if (this.authService.isValid()) {
+      this.router.navigate(['/sec']);
+    }
   }
 
   validateForm(ctrl, type?) {
@@ -46,14 +60,7 @@ export class AuthtLoginComponent implements OnInit {
     return result;
   }
 
-
-  submitLogin() {
-    this.authService.login(this.formLogin.value.email, this.formLogin.value.password);
-    this.message = this.authService.message;
-    if (this.authService.isValid) {
-      this.router.navigate(['/sec']);
-    }
-    // this.authService.message;
-    // this.authService.isValid;
+  gotoLink(link) {
+    this.router.navigate([link]);
   }
 }

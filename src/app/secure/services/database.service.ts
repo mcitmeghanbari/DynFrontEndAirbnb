@@ -71,6 +71,15 @@ export class DatabaseService {
         { title: 'Great location', desc: '95% of recent guests gave the location a 5-star rating.' },
         { title: 'Great check-in experience', desc: '90% of recent guests gave the check-in process a 5-star rating.' }]
     },
+    {
+      id: 8, user: 2, location: 'Montreal', title: 'Skylit Loft in Old Montreal2', room: 'Entire apartment2', beds: 2, bath: 2, guests: "2", points: 2.5,
+      Desc: "Incredible listing, at an amazing location , tastefully decorated in the heart of downtown, walking distance to Place des Arts and St-Laurent Boulevard with all kind of restaurants, bars, coffee shops and night clubs. 5 mins walking distance to Saint Laurent metro station right after Berri Uqam, green line (closest location from the apartment",
+      summary: [
+        { title: 'Entire home2', desc: 'You’ll have the apartment to yourself.' },
+        { title: 'Sparkling clean2', desc: '22 recent guests said this place was sparkling clean.' },
+        { title: 'Great location2', desc: '22% of recent guests gave the location a 5-star rating.' },
+        { title: 'Great check-in experience2', desc: '22% of recent guests gave the check-in process a 5-star rating.' }]
+    }
   ];
 
   stays = [
