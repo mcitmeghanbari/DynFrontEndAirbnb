@@ -126,4 +126,8 @@ export class DatabaseService {
     console.log(finds);
     return finds;
   }
+
+  addHost(user, location, room, guests) {
+
+  }
 }

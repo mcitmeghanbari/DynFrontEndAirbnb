@@ -15,8 +15,6 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 //----------------------------------------------------------------------------------------
 
-import { TestComponent } from './test/test.component';
-
 
 const appRoutes: Routes = [
   { path: '', loadChildren: () => import('./public/public.module').then((m) => m.PublicModule) },
@@ -25,8 +23,8 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TestComponent        
+    AppComponent
+            
   ],
   imports: [
     CommonModule,

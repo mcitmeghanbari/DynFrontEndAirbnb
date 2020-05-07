@@ -28,10 +28,9 @@ import { StyTrpDetailComponent } from './sty-trips/sty-trp-detail/sty-trp-detail
 
 //----------------------------------------------------------------------------------------
 import { DatabaseService } from '../services/database.service';
-
-
 //----------------------------------------------------------------------------------------
 
+import { TestComponent } from '../test/test.component';
 
 const appRoutes: Routes = [
   {
@@ -45,13 +44,15 @@ const appRoutes: Routes = [
         path: 'trips', component: StyTripsComponent, children: [
           { path: '', component: StyTrpListComponent },
           { path: 'details/:i', component: StyTrpDetailComponent }]
-      }
+      },
+      { path: 'test', component: TestComponent }
     ]
   }
 ];
 
 @NgModule({
   declarations: [
+    TestComponent,
     StayComponent,
     StyBookComponent,
     StyTripsComponent,

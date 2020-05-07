@@ -5,6 +5,7 @@ import { DatabaseService } from 'src/app/secure/services/database.service';
 import { AuthenticationService } from 'src/app/public/services/authentication.service';
 import { Input } from '@angular/core';
 
+
 @Component({
   selector: 'app-sty-bk-dt-reserve',
   templateUrl: './sty-bk-dt-reserve.component.html',
@@ -17,6 +18,8 @@ export class StyBkDtReserveComponent implements OnInit {
   formReserve: FormGroup;
   hostId;
   userId;
+
+  
 
   constructor(private router: Router, private route: ActivatedRoute,
     public databaseService: DatabaseService,

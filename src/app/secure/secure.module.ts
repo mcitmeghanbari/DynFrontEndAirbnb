@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 //--------------------------
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 //--------------------------
 import { SharedModule } from '../shared/shared.module';
 //----------------------------------------------------------------------------------------
@@ -26,7 +29,8 @@ const appRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(appRoutes),
     FormsModule, 
-    ReactiveFormsModule                                           
+    ReactiveFormsModule,
+    FontAwesomeModule                                        
   ],
   providers: [    
   ],

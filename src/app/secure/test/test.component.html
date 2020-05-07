@@ -1,0 +1,56 @@
+<!-- <div class="back0">
+    <div class="back1 back2">
+    </div>
+</div> -->
+
+<div class="row mr-5">
+    <div class="col-8">
+    </div>
+    <div class="col-4 p-3 border rounded bg-white shadow">
+
+        <div class="row py-2">
+            <div class="col">
+                <h2><b>Earn money as an Airbnb host</b></h2>
+            </div>
+        </div>
+
+        <div class="row py-2">
+            <div class="col">
+                <h6><b>Tell us a little about your place</b></h6>
+                <form [formGroup]="form" (ngSubmit)="submit()">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <select formControlName="location" id="inputlocation" class="form-control">
+                                <option selected="selected" value="Montreal">Montreal <br>QC, Canada</option>
+                                <option value="Montreal Est">Montreal Est <br>QC, Canada</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-7">
+                            <select formControlName="room" id="inputRoom" class="form-control">
+                                <option selected="selected">Entire place</option>
+                                <option>Private room</option>
+                                <option>Shared room</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-5">
+                            <select formControlName="guests" id="inputGuests" class="form-control">
+                                <option>1</option>
+                                <option selected="selected">2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group py-2">
+                        <button type="button" (click)="submit()" class="btn btn-block btn-danger">
+                            Get started
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
