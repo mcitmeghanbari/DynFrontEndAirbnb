@@ -20,10 +20,15 @@ import { StyBkDtReserveComponent } from './sty-book/sty-bk-detail/sty-bk-dt-rese
 import { StyBkDtPhotosComponent } from './sty-book/sty-bk-detail/sty-bk-dt-photos/sty-bk-dt-photos.component';
 
 import { StyBkDtOvSummaryComponent } from './sty-book/sty-bk-detail/sty-bk-dt-overview/sty-bk-dt-ov-summary/sty-bk-dt-ov-summary.component';
+
+import { StyTrpListComponent } from './sty-trips/sty-trp-list/sty-trp-list.component';
+import { StyTrpListItemComponent } from './sty-trips/sty-trp-list-item/sty-trp-list-item.component';
+import { StyTrpDetailComponent } from './sty-trips/sty-trp-detail/sty-trp-detail.component';
 //----------------------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------------------
 import { DatabaseService } from '../services/database.service';
+
 
 //----------------------------------------------------------------------------------------
 
@@ -31,11 +36,16 @@ import { DatabaseService } from '../services/database.service';
 const appRoutes: Routes = [
   {
     path: '', component: StayComponent, children: [
-      { path: '', component: StyBookComponent , children: [
-        { path: '', component: StyBkListComponent },
-        { path: 'details/:i', component: StyBkDetailComponent }
-      ]},
-      { path: 'trips', component: StyTripsComponent }
+      {
+        path: '', component: StyBookComponent, children: [
+          { path: '', component: StyBkListComponent },
+          { path: 'details/:i', component: StyBkDetailComponent }]
+      },
+      {
+        path: 'trips', component: StyTripsComponent, children: [
+          { path: '', component: StyTrpListComponent },
+          { path: 'details/:i', component: StyTrpDetailComponent }]
+      }
     ]
   }
 ];
@@ -51,13 +61,16 @@ const appRoutes: Routes = [
     StyBkDetailComponent,
     StyBkDtOverviewComponent,
     StyBkDtOvSummaryComponent,
-    StyBkDtReserveComponent,    
-    StyBkDtPhotosComponent
+    StyBkDtReserveComponent,
+    StyBkDtPhotosComponent,
+    StyTrpListComponent,
+    StyTrpListItemComponent,
+    StyTrpDetailComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(appRoutes),
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [

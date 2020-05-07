@@ -35,7 +35,7 @@ export class AuthenticationService {
     let user = this.findUser(email);
     if (user == null) {
       let newId : number = this.users[this.users.length-1].id + 1;
-      this.users.push({ id: newId, email: email, password: password, fname: fname, lname: lname })
+      this.users.push({ id: newId, email: email, password: password, fname: fname, lname: lname });
       this.isValid = true;
       this.user = this.users[this.users.length-1];
     }
@@ -52,6 +52,15 @@ export class AuthenticationService {
   findUser(email) {
     for (let i = 0; i < this.users.length; i++) {
       if (this.users[i].email == email) {
+        return this.users[i];
+      }
+    }
+    return null;
+  }
+
+  findUserById(id) {
+    for (let i = 0; i < this.users.length; i++) {
+      if (this.users[i].id == id) {
         return this.users[i];
       }
     }

@@ -4,13 +4,12 @@ import { DatabaseService } from 'src/app/secure/services/database.service';
 import { AuthenticationService } from 'src/app/public/services/authentication.service';
 import { Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-sty-bk-list-item',
-  templateUrl: './sty-bk-list-item.component.html',
-  styleUrls: ['./sty-bk-list-item.component.css']
+  selector: 'app-sty-trp-list-item',
+  templateUrl: './sty-trp-list-item.component.html',
+  styleUrls: ['./sty-trp-list-item.component.css']
 })
-export class StyBkListItemComponent implements OnInit {
+export class StyTrpListItemComponent implements OnInit {
 
   constructor(private router: Router, private databaseService: DatabaseService, private authenticationService: AuthenticationService) { }
 
@@ -18,9 +17,14 @@ export class StyBkListItemComponent implements OnInit {
   itemHost = null;
   itemUser = null;
 
-  ngOnInit(): void {
-    this.itemHost = this.databaseService.findHost(this.item.id);
-    this.itemUser = this.authenticationService.findUserById(this.itemHost.user); 
-  }
+  hostTitle = "";
 
+  ngOnInit(): void {
+    this.itemHost = this.databaseService.findHost(this.item.host);
+    this.itemUser = this.authenticationService.findUserById(this.itemHost.user);
+
+    this.hostTitle = this.itemHost.title;
+    this.hostTitle = this.hostTitle.substr(0, 25) + " ... ";
+ 
+  }
 }

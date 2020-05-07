@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/public/services/authentication.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute, private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
+    if (!this.authenticationService.isValid) {
+      this.gotoLink('/');
+    }
+  }
+
+  gotoLink(link) {
+    this.router.navigate([link]);
   }
 
 }

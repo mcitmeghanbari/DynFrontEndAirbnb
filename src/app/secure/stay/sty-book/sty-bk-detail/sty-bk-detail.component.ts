@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Input } from '@angular/core';
+import { DatabaseService } from 'src/app/secure/services/database.service';
+import { AuthenticationService } from 'src/app/public/services/authentication.service';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-sty-bk-detail',
@@ -8,19 +12,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StyBkDetailComponent implements OnInit {
 
-  item = {id: null, title: '', room: '', beds: null, points: null };
 
+  constructor(private route: ActivatedRoute, private router: Router, public databaseService: DatabaseService, private authenticationService: AuthenticationService) { }
 
-  constructor(private route: ActivatedRoute) {}
+  item;
 
   ngOnInit(): void {
+    let id = this.route.snapshot.params['i'];
+    this.item = this.databaseService.findHost(id);
+  }
 
-    this.item.id = this.route.snapshot.params['i'];
-    // this.item.title = this.route.snapshot.params['t'];
-    // this.item.room = this.route.snapshot.params['r'];
-    // this.item.beds = this.route.snapshot.params['b'];
-    // this.item.points = this.route.snapshot.params['p'];
-
+  gotoLink(link) {
+    this.router.navigate([link]);
   }
 
 }

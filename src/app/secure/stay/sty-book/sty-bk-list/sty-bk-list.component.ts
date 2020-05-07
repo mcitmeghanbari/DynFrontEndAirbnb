@@ -11,12 +11,9 @@ export class StyBkListComponent implements OnInit {
   items = null;
 
   constructor(private databaseSrvice: DatabaseService) {
-    this.items = databaseSrvice.items;
+    this.items = databaseSrvice.hosts;
   }
-
 
   ngOnInit(): void {
   }
-
-
 }

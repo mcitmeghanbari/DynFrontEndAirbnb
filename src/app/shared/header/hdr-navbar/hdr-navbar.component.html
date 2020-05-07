@@ -4,7 +4,7 @@
         <nav class="navbar navbar-light">
             <a class="navbar-brand" href="/">
                 <div>
-                    <a aria-label="Airbnb homepage" href="/">
+                    <a aria-label="Airbnb homepage" (click)="gotoLink('')">
                         <div id="logo">
                             <svg width="102" height="32" fill="currentcolor" class="d-inline-block align-top">
                                 <path
@@ -59,7 +59,7 @@
                         <div *ngIf="!authenticationService.isValid" (click)="gotoLink('/')" class="col-6">Login</div>
                         <div *ngIf="authenticationService.isValid" class="col-6">{{ authenticationService.user.fname }}</div>
                         <div class="col-6">
-                            <img src="assets/imgs/user.png" width="32" height="32" class="img-thumbnail"
+                            <img src="{{ imageUser }}" width="32" height="32" class="img-thumbnail"
                                 style="border-radius: 50%">
                         </div>
                     </div>

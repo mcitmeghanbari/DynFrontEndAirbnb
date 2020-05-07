@@ -12,9 +12,8 @@ export class StyBkDtOvSummaryComponent implements OnInit {
 
   constructor() { }
 
-  @Input() item: {icon: string, title: string, desc: string };
+  @Input() item;
 
   ngOnInit(): void {
   }
-
 }

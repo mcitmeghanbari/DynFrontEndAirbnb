@@ -1,0 +1,68 @@
+<div class="row justify-content-center" style="height: 100%;">
+    <div class="col-12 col-md-6">
+
+        <div class="card shadow rounded-lg">
+
+            <div class="row  my-2 py-3 justify-content-center">
+                <div class="col-2 px-4 ">
+                    <a [routerLink]="['../../']"><svg viewBox="0 0 12 11"
+                            role="img" aria-label="Back to trips" focusable="false"
+                            style="height: 18px; width: 18px; fill: currentcolor;">
+                            <path
+                                d="m10.49 4.75h-7.69l3.22-3.22a.75.75 0 1 0 -1.06-1.06l-4.5 4.49a.75.75 0 0 0 0 1.06l4.5 4.5a.75.75 0 1 0 1.06-1.06l-3.21-3.21h7.68a.75.75 0 0 0 0-1.5z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="col-10 ">
+                    <h6><b>Your home reservation</b></h6>
+                </div>
+            </div>
+
+            <img src="assets/imgs/host/{{item.id}}-1.png" class="card-img-top" alt="itemHost.title">
+            <div class="card-body">
+
+                <div class="row border-bottom my-2 py-3">
+                    <p class="card-text col-12 text-secondary px-2">{{ item.checkin }} - {{ item.checkout }}</p>
+                    <h3 class="card-title col-12 pt-0 px-2">{{ itemHost.title }}</h3>
+                </div>
+
+                <div class="row border-bottom my-2 py-3">
+                    <div class="col border-right">
+                        <p class="card-text text-secondary mb-3">checkin</p>
+                        <h6 class="card-title pt-0">{{ item.checkin }}</h6>
+                    </div>
+                    <div class="col">
+                        <p class="card-text text-secondary mb-3">checkout</p>
+                        <h6 class="card-title pt-0">{{ item.checkout }}</h6>
+                    </div>
+                </div>
+
+                <div class="row border-bottom my-2 py-3">
+                    <div class="col">
+                        <p class="card-text text-secondary mb-3"><b>Apartment</b></p>
+                        <p class="card-text text-secondary mb-3">Hosted by <b>{{ userHost.fname }}</b></p>
+                    </div>
+                    <div class="col-auto">
+                        <img src="{{ imageHost }}" class="col-auto img-thumbnail rounded-circle"
+                            style="max-height: 64px;">
+                    </div>
+                </div>
+
+                <div class="row border-bottom my-2 py-3">
+                    <div class="col">
+                        <p class="card-text text-secondary mb-3"><b>Who’s coming</b></p>
+                        <p class="card-text text-secondary mb-3"><b>{{ item.guests }}</b> guests</p>
+                    </div>
+                    <div class="col-auto">
+                        <img src="{{ imageUser }}" class="col-auto img-thumbnail rounded-circle"
+                            style="max-height: 64px;">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>

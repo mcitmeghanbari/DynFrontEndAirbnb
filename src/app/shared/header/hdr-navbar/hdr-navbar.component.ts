@@ -10,16 +10,20 @@ import { Router } from '@angular/router';
 })
 export class HdrNavbarComponent implements OnInit {
 
-  constructor(private router: Router, public authenticationService : AuthenticationService) { }
+  constructor(private router: Router, public authenticationService: AuthenticationService) { }
+
+  imageUser = "assets/imgs/user.png";
 
   ngOnInit(): void {
+    //this.imageUser = "assets/imgs/user/" + this.authenticationService.user.id + ".jpg";
   }
 
-  logout(){
+  logout() {
     this.authenticationService.logout();
+    this.imageUser = "assets/imgs/user.png";
   }
 
-  gotoLink(link){
+  gotoLink(link) {
     this.router.navigate([link]);
   }
 }

@@ -1,0 +1,23 @@
+<div class="card shadow rounded-lg" style="width: 28rem;">
+    <img src="assets/imgs/host/{{item.id}}-1.png" class="card-img-top" alt="itemHost.title">
+    <div class="card-body">
+
+        <p class="card-text pb-0 text-secondary">{{ item.checkin }} - {{ item.checkout }}</p>
+        <h4 class="card-title pt-0">{{ itemHost.location }}</h4>        
+
+        <a class="row flex-nowrap btn btn-outline-light text-secondary" [routerLink]="['/sec/trips/details', item.id]" style="border-width: 0px; text-align: left;">
+            <img src="assets/imgs/host/{{item.id}}-1.png" class="col-auto img-thumbnail" style="max-height: 64px;">
+            <small class="col-10"> {{ hostTitle }} </small>
+            <span class="col-2">
+                <svg aria-hidden="true" role="presentation" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
+                    style="fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;">
+                    <g fill="none">
+                        <path
+                            d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932">
+                        </path>
+                    </g>
+                </svg> 
+            </span>
+        </a>
+    </div>
+</div>
